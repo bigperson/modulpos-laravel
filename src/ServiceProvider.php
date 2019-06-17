@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * This file is part of ModulposLaravel package.
@@ -37,7 +38,7 @@ class ServiceProvider extends BaseServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                Associate::class
+                Associate::class,
             ]);
         }
     }
@@ -55,9 +56,9 @@ class ServiceProvider extends BaseServiceProvider
 
         $this->app->bind(Client::class, function ($app) {
             return new Client(
-                (string)config('modulpos.login'),
-                (string)config('modulpos.password'),
-                (bool)config('modulpos.test_mode')
+                (string) config('modulpos.login'),
+                (string) config('modulpos.password'),
+                (bool) config('modulpos.test_mode')
             );
         });
     }
@@ -70,7 +71,7 @@ class ServiceProvider extends BaseServiceProvider
     public function provides()
     {
         return [
-            Client::class
+            Client::class,
         ];
     }
 

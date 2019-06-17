@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * This file is part of ModulposLaravel package.
@@ -47,9 +48,9 @@ class Associate extends Command
     public function handle()
     {
         $login = $this->ask('What is your login modulkassa?');
-        $password =  $this->secret('What is the password modulkassa?');
+        $password = $this->secret('What is the password modulkassa?');
         $retailPointUuid = $this->ask('What is your retail point Uuid?');
-        $testMode = (bool)$this->choice('Use test mode?', [true => 'Yes', false => 'No'], 'Yes');
+        $testMode = (bool) $this->choice('Use test mode?', [true => 'Yes', false => 'No'], 'Yes');
 
         $associate = new \Bigperson\ModulposApiClient\Associate($login, $password, $retailPointUuid, $testMode);
         $result = $associate->init();
