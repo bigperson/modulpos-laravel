@@ -1,0 +1,33 @@
+{
+    "name": "bigperson/modulpos-laravel",
+    "description": "Laravel provider for modulkassa",
+    "type": "package",
+    "require": {
+        "bigperson/modulpos-php-api-client": "^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Kartsev",
+            "email": "anton@alarmcrm.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Bigperson\\ModulposLaravel\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bigperson\\ModulposLaravel\\ServiceProvider"
+            ]
+        }
+    }
+}
